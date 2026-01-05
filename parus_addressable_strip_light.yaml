@@ -1,0 +1,109 @@
+substitutions:
+  name: parus-addressable-strip-light
+  friendly_name: Parus Addressable Strip Light
+  friendly_name_short: parus_addressable_strip_light
+  version: '06.01.2025'
+  device_ip: 192.168.0.218
+  reboot_timeout: 20min
+  neopixel_pin: GPIO3
+  neopixel_num_leds: 136
+  moisture_pin: GPIO14
+<<: !include attach/common/esp/8266_nodemcuv2_restore.yaml
+<<: !include attach/common/logger/debug.yaml
+<<: !include attach/common/api.yaml
+<<: !include attach/common/ota.yaml
+<<: !include attach/common/wifi.yaml
+<<: !include attach/common/web/web_server3.yaml
+
+packages:
+  common: !include attach/packages/standart.yaml
+  8266dma: !include attach/packages/neopixel_light_ws2812_8266dma.yaml
+  playlist: !include attach/packages/strip_effect_preset_playlist.yaml
+
+esphome:
+  name: ${name}
+  friendly_name: ${friendly_name}
+  name_add_mac_suffix: false
+  project:
+    name: esphome.${friendly_name}
+    version: ${version}
+  on_boot:
+    priority: 700
+    then:
+      - light.turn_on:
+          id: ${friendly_name_short}
+          effect: "Twinkle Parus"
+          brightness: 80%
+light:
+  platform: neopixelbus
+  id: ${friendly_name_short}
+  variant: WS2812
+  pin: ${neopixel_pin}
+  num_leds: ${neopixel_num_leds}
+  type: GRB
+  method:
+    type: esp8266_dma #  GPIO3
+  name: "NeoPixel Light"
+  effects:
+  - !include attach/includes/strip_effects/balls_parus.yaml
+  - !include attach/includes/strip_effects/blue_scan_parus.yaml
+  - !include attach/includes/strip_effects/bluez_parus.yaml
+  - !include attach/includes/strip_effects/breathing.yaml
+  - !include attach/includes/strip_effects/candle_parus.yaml
+  - !include attach/includes/strip_effects/candy_cane_parus.yaml
+  - !include attach/includes/strip_effects/christmas_parus.yaml
+  - !include attach/includes/strip_effects/confetti_parus.yaml
+  - !include attach/includes/strip_effects/dynamic_smooth_parus.yaml
+  - !include attach/includes/strip_effects/explosion_parus.yaml
+  - !include attach/includes/strip_effects/fireworks_parus.yaml
+  - !include attach/includes/strip_effects/flames_vertical.yaml
+  - !include attach/includes/strip_effects/glitter_parus.yaml
+  - !include attach/includes/strip_effects/hue_parus.yaml
+  - !include attach/includes/strip_effects/juggle_parus.yaml
+  - !include attach/includes/strip_effects/lava_parus.yaml
+  - !include attach/includes/strip_effects/matrix_rain_parus.yaml
+  - !include attach/includes/strip_effects/noice_parus.yaml
+  - !include attach/includes/strip_effects/rainbow_parus.yaml
+  - !include attach/includes/strip_effects/snow_flack_parus.yaml
+  - !include attach/includes/strip_effects/strobe_parus.yaml
+  - !include attach/includes/strip_effects/starburst_parus.yaml
+  - !include attach/includes/strip_effects/sunrise_parus.yaml
+  - !include attach/includes/strip_effects/trail_parus.yaml
+  - !include attach/includes/strip_effects/tunnel_parus.yaml
+  - !include attach/includes/strip_effects/twinkle_parus.yaml
+  - !include attach/includes/strip_effects/two_wave_parus.yaml
+  - !include attach/includes/strip_effects/wave_parus.yaml
+  - !include attach/includes/strip_effects/wipe_dinamic_parus.yaml
+  - !include attach/includes/strip_effects/wheel_of_color_parus.yaml
+number:
+  - platform: template
+    name: Effect Speed
+    icon: mdi:speedometer
+    min_value: 0
+    max_value: 255
+    step: 1
+    optimistic: true
+    id: effect_speed
+    initial_value: 128
+    mode: slider
+  - platform: template
+    name: Effect Scale
+    icon: mdi:drag-variant
+    min_value: 0
+    max_value: 100
+    step: 1
+    optimistic: true
+    id: effect_scale
+    initial_value: 50
+    mode: slider
+  - platform: template
+    name: Effect Intensity
+    icon: mdi:spotlight
+    min_value: 0
+    max_value: 255
+    step: 1
+    optimistic: true
+    id: effect_intensity
+    initial_value: 128
+    mode: slider
+    
