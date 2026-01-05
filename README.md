@@ -108,17 +108,18 @@
 3. Подключите питание и проверьте работоспособность ленты.
 
 ### 2. Настройка ESPHome
-1. Откройте `addressable-light.yaml` в любом редакторе или ESPHome Builder.
+1. Откройте `parus_addressable_strip_light.yaml` в любом редакторе или ESPHome Builder.
 2. Настройте `substitutions` под вашу конфигурацию:
 ```yaml
 substitutions:
-  name: parus-addressable-light
-  friendly_name: Parus Addressable Light
-  friendly_name_short: parus_light
-  version: "01.10.2025"
-  device_ip: 192.168.x.x  # Ваш IP
-  led_count: 60            # Количество светодиодов
-  # ... другие параметры (GPIO, эффекты и т. д.)
+  name: parus-addressable-strip-light
+  friendly_name: Parus Addressable Strip Light
+  friendly_name_short: parus_addressable_strip_light
+  version: '06.01.2025'
+  device_ip: XXX.XXX.XXX.XXX
+  reboot_timeout: 20min
+  neopixel_pin: GPIO3
+  neopixel_num_leds: 136
 ```
 
 ### 4. Интеграция с Home Assistant
@@ -130,8 +131,7 @@ substitutions:
 
 ### Веб‑интерфейс
 - Доступ по IP‑адресу устройства.
-- Управление: цвет, яркость, скорость эффектов, пресеты.
-
+- Управление: цвет, яркость, скорость и другие параметры эффектов, пресеты.
 
 ### Настройки в Home Assistant
 - **Color**: выбор цвета через палитру.
