@@ -1,5 +1,6 @@
-![ESPHome Logo](images/esphome-icon.png)  
-![Home Assistant Logo](https://avatars.githubusercontent.com/u/13844975?s=200&v=4)
+# Parus‑Addressable‑Strip-Light: Адресный светильник Parus на ESPHome
+
+![ESPHome Logo](images/esphome-icon.png)  ![Home Assistant Logo](https://avatars.githubusercontent.com/u/13844975?s=200&v=4)
 
 <p align="center">
   <img alt="Static Badge" src="https://img.shields.io/badge/made%20by-ParusSmartHome-blue">
@@ -8,10 +9,7 @@
   <img alt="Static Badge" src="https://img.shields.io/badge/license-MIT-orange">
 </p>
 
-# Parus‑Addressable‑Strip-Light: Адресный светильник на ESPHome
-
 ## 🌟 Описание проекта
-
 
 **Parus‑Addressable‑Strip-Light** — Система построена на базе адресной светодиодной ленты (типа WS2812B, SK6812 и т. п.), управляемой микроконтроллером (ESP8266/ESP32). Проект позволяет:
 - создавать сложные динамические световые эффекты;
