@@ -7,7 +7,7 @@ substitutions:
   reboot_timeout: 20min
   neopixel_pin: GPIO3
   neopixel_num_leds: 136
-  moisture_pin: GPIO14
+
 <<: !include attach/common/esp/8266_nodemcuv2_restore.yaml
 <<: !include attach/common/logger/debug.yaml
 <<: !include attach/common/api.yaml
@@ -17,7 +17,6 @@ substitutions:
 
 packages:
   common: !include attach/packages/standart.yaml
-  8266dma: !include attach/packages/neopixel_light_ws2812_8266dma.yaml
   playlist: !include attach/packages/strip_effect_preset_playlist.yaml
 
 esphome:
