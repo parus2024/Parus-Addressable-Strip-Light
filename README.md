@@ -1,7 +1,7 @@
 
 # Parus‑Addressable‑Strip-Light: Адресный светильник на ESPHome
 
-![ESPHome Logo](addressable-light-img/esphome1.png)  
+![ESPHome Logo](images/esphome-icon.png)  
 ![Home Assistant Logo](https://avatars.githubusercontent.com/u/13844975?s=200&v=4)
 
 <p align="center">
