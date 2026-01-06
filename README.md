@@ -136,8 +136,8 @@ substitutions:
 ## 📊 Скриншоты и видео
 - [yaml файл прошивки](parus_addressable_strip_light.yaml)
 - [пример свечения](addressable-light-img/demo.jpg)
-- [веб‑интерфейс](addressable-light-img/web-ui.png)
-- [схема подключений](addressable-light-img/wiring.jpg)
+- [веб‑интерфейс](images/interface_web.jpg)
+- [HA‑интерфейс](images/interface_ha.jpg)
 - [видео работы](https://youtu.be/example)
 
 ## Итог
