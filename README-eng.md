@@ -135,7 +135,7 @@ Install required components explicitly or via references to necessary configurat
 <<: !include attach/common/ota.yaml
 <<: !include attach/common/wifi.yaml
 ```
-### 4. Add necessary packages with correct paths (example ):
+### 4. Add necessary packages with correct paths (example [packages](https://github.com/parus2024/esphome-config/tree/main/attach/packages) ):
 ```yaml
 packages:
   common: !include attach/packages/standart.yaml
@@ -143,7 +143,7 @@ packages:
   playlist: !include attach/packages/strip_effect_preset_playlist.yaml
   random: !include attach/packages/strip_light_effect_random.yaml
 ```
-to operate, you also need to link to  or explicitly specify them in the main file.
+to operate, you also need to link to [effects](https://github.com/parus2024/esphome-config/tree/main/attach/includes/strip_effects) or explicitly specify them in the main file.
 
 ### 5. Home Assistant Integration
 
@@ -176,10 +176,10 @@ The system combines a rich set of visual effects with flexible control via prese
 
 ## 🙏 Acknowledgements
 
-ESPHome community for the excellent framework.
-Home Assistant for integration.
-@andrewjswan for inspiration and ideas.
-You for using it! If the project is useful, please star it on GitHub.
+- ESPHome community for the excellent framework.
+- Home Assistant for integration.
+- [@andrewjswan](https://github.com/andrewjswan) for inspiration and ideas.
+- You for using it! If the project is useful, please star it on GitHub.
 
 ## 📄 License
 This project is licensed under the MIT License — see the LICENSE file for details. Use at your own risk.
