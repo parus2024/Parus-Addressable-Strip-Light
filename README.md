@@ -128,7 +128,7 @@ substitutions:
 <<: !include attach/common/wifi.yaml
 ```
 
-### 4. Добавьте необходимые пакеты с прописанными правильными путями к ним (пример)
+### 4. Добавьте необходимые пакеты с прописанными правильными путями к ним (пример [packages](https://github.com/parus2024/esphome-config/tree/main/attach/packages) )
 ```yaml
 packages:
   common: !include attach/packages/standart.yaml
@@ -136,6 +136,7 @@ packages:
   playlist: !include attach/packages/strip_effect_preset_playlist.yaml
   random: !include attach/packages/strip_light_effect_random.yaml
 ```
+- для работы также необходимо сделать ссылки на [файлы эффектов](https://github.com/parus2024/esphome-config/tree/main/attach/includes/strip_effects) либо явно указать их в главном файле.
 
 ### 5. Интеграция с Home Assistant
 - Добавьте устройство в НА.
