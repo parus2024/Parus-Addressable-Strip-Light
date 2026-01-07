@@ -161,7 +161,7 @@ packages:
 - [пример свечения](images/addressable-fireworks-parus.jpg)
 - [веб‑интерфейс](images/interface_web.jpg)
 - [HA‑интерфейс](images/interface_ha.jpg)
-- [обзор на YOUTUBE ](https://youtu.be/7ONLPmnGHnA)
+- [обзор на YOUTUBE ](https://youtu.be/LG-TV9KKmBM)
 - [обзор на RUTUBE ](https://rutube.ru/video/f5aa4e9fea0d281e277900d629d03200/)
 
 ## Итог
