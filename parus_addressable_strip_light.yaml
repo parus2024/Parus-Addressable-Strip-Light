@@ -7,7 +7,8 @@ substitutions:
   reboot_timeout: 20min
   neopixel_pin: GPIO3
   neopixel_num_leds: 136
-
+  
+<<: !include attach/common/esphome.yaml
 <<: !include attach/common/esp/8266_nodemcuv2_restore.yaml
 <<: !include attach/common/logger/debug.yaml
 <<: !include attach/common/api.yaml
@@ -26,20 +27,6 @@ packages:
   playlist: !include attach/packages/strip_effect_preset_playlist.yaml
   random: !include attach/packages/strip_light_effect_random.yaml
 
-esphome:
-  name: ${name}
-  friendly_name: ${friendly_name}
-  name_add_mac_suffix: false
-  project:
-    name: esphome.${friendly_name}
-    version: ${version}
-  on_boot:
-    priority: 700
-    then:
-      - light.turn_on:
-          id: ${friendly_name_short}
-          effect: "Twinkle Parus"
-          brightness: 80%
 light:
   platform: neopixelbus
   id: ${friendly_name_short}
